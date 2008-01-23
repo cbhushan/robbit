@@ -1,0 +1,63 @@
+v beta 3.0
+Added features:
+
+    * Placing obstacle (by reading from ASCII file)
+    * Simulating from the given motion algorithm (in form of code)
+    * Saving the generated positions in a log file
+    * Show/Hide obstacle
+    * Show/Hide trails
+
+Bugs fixed:
+
+    * Changing the colour of the robots according to the latest collision
+
+
+v 2.2
+Added features:
+
+    * Support for Khepera III
+    * Collision detection by changing colour
+    * Numbering the robots
+    * Onboard View of robots
+
+Bugs fixed:
+
+    * Unstability associated with 'Info-bar'
+
+
+v 2.0
+Added features:
+
+    * Lighting control
+    * Chessboard floor
+    * Motion-trails
+    * Zoom In/Out
+    * Animation speed control
+    * Centriod of the robots
+
+Bugs fixed:
+
+    * Unstability associated with 3D panaromic view
+
+
+
+v 1.2
+Added features:
+
+    * 3D panaromic view through mouse control
+    * Info bar to display any message
+    * Video recording
+    * Saving snapshots
+
+
+
+v 1.0
+Added features:
+
+    * 3D view of robots
+    * Replay the whole animation
+    * Stop, play-pause
+
+Bugs fixed:
+
+    * Unstability associated with all the basic features

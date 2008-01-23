@@ -1,0 +1,24 @@
+% Obstacle loading ASCII file
+% Specify one Obstacle per line
+% Following are the syntax to define any Obstacle
+%
+% 2 dimentional point type: 2D(<x-coordinate in float>,<y-coordinate in float>)
+% Eg: 2D(19.237,256) sets a point obstacle at location (19.237,256)
+%
+% Wall type (sets a wall type of obstacle of given height and thickness between two given points)
+% WL(<X1>,<Y1>,<X2>,<Y2>,<H>)
+% where, X1,Y1,X2,Y2 are the x and y coordinates of 1st and 2nd point in float
+%        H is height of wall in float
+%Eg:  WL(2,4.5,3.567,23,5.5,1.5)  sets a wall from (2,4.5) to (3.567,23) of height 5.5 units and thickness 1.5 units
+%
+% Cube type:  CB(<X>,<Y>,<side length>)
+% Eg: CB(4.5,6.3,5)  sets a cube of side length 5 units such that the center of the surface of cube touching the floor is (4.5,6.3) and the sides are parallel to arena sides.
+%
+% Sphere type:  SP(<X>,<Y>,<radius>)
+% Eg: SP(4.5,6.3,5)  sets a sphere of radius 5 units such that the sphere touches the floor at (4.5,6.3)
+%
+%
+2D(105.2,53.4)
+WL(10,54.5,95.567,23,15.5)
+CB(97.2,97.3,15)
+SP(80,80,10)

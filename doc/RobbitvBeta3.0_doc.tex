@@ -1,0 +1,420 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{float}
+\floatstyle{plain}
+\hypersetup{pdfauthor={Sayandeep},
+				pdftitle={Graphical Simulator for Multi-robot Systems},
+				colorlinks}
+\setlength{\topmargin}{-0.5in}
+\setlength{\oddsidemargin}{-0.3in}
+\setlength{\evensidemargin}{-0.3in}
+\setlength{\textheight}{9in}
+\setlength{\textwidth}{7in}
+
+\newcommand{\ns}{\vspace{6pt}\noindent}
+
+\begin{document}
+\sf %% sans
+%%
+%% title %%
+%%
+\title{{\bf robbit v3.0 documentation} \\ a graphical simulator for multi-robot formations}
+\author{Chitresh Bhushan and Sayandeep Purkayasth}
+\date{December 7, 2007}
+\maketitle
+\newpage
+%%
+%% GPL %%
+%%
+This text is a brief description of the features that are present in the robbit version 3.0, 08 December 2007. This is Edition 2.0, last updated 08 December 2007, of robbit documentation, for robbit, version 3.0.
+
+\ns
+\par \narrower \narrower
+	This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+\newpage
+\noindent The \textbf{people} involved in this project are listed below with contact details.
+
+\ns
+\noindent
+{\bf Antonelli Gianluca} \\
+Professor \\
+Dipartimento di Automazione, Elettromagnetismo \\
+Ingegneria dell'Informazione e Matematica Industriale \\
+Universit\`a degli Studi di Cassino, Italy \\
+\href{mailto:antonelli@unicas.it}{antonelli@unicas.it} \\
+\href{http://webuser.unicas.it/antonelli}{http://webuser.unicas.it/antonelli}
+
+\ns
+{\bf Arrichiello Filippo} \\
+Research Assistant \\
+Dipartimento di Automazione, Elettromagnetismo \\
+Ingegneria dell'Informazione e Matematica Industriale \\
+Universit\`a degli Studi di Cassino, Italy \\
+\href{mailto:f.arrichiello@unicas.it}{f.arrichiello@unicas.it} \\
+\href{http://webuser.unicas.it/arrichiello}{http://webuser.unicas.it/arrichiello}
+
+\ns
+{\bf Bhushan Chitresh} \\
+Undergraduate student \\
+Department of Electronics and Electrical Communication Engineering \\
+Indian Institute of Technology Kharagpur \\
+\href{mailto:chitresh.bhushan@gmail.com}{chitresh.bhushan@gmail.com} \\
+\href{http://chitresh.co.nr}{http://chitresh.co.nr}
+
+\ns
+{\bf Prakash Chander} \\
+Undergraduate student \\
+Department of Computer Science Engineering \\
+Indian Institute of Technology Guwahati
+
+\ns
+{\bf Purkayasth Sayandeep} \\
+Undergraduate student \\
+Department of Electronics and Electrical Communication Engineering \\
+Indian Institute of Technology Kharagpur \\
+\href{mailto:deepcyan@gmail.com}{deepcyan@gmail.com} \\
+\href{http://deepcyan.co.nr}{http://deepcyan.co.nr}
+
+\vspace{0.7in}
+\noindent The \textbf{project website} is \href{http://webuser.unicas.it/robbit}{http://webuser.unicas.it/robbit}. \\
+It is also available on Sourceforge: \href{http://sourceforge.net/projects/robbit/}{http://sourceforge.net/projects/robbit/}.
+
+\newpage
+%%
+%% table of contents %%
+%%
+
+\tableofcontents 
+\newpage
+
+%%
+%% content %%
+%%
+
+%%
+%% section: introduction %%
+%%
+\section{Introduction}
+\subsection{Concerning robbit}
+With so much research going on concerning robots in this world today, and so much more on wireless networks, we decided that what this world really needs is a good platform for testing out motion algorithms for robot formations. Now we all know how diffcult it is to get a bot moving how you want it to, so we thought a simulator ought to do the trick. A 3D simulator: all the better. And so it was. With OpenGL in one hand and OpenCV in the other, we set out to do what we were born to do: robbit.
+
+\ns
+I guess a wee bit on the nomenclature would do some good at this point. Well it so happens that just before starting out on this wonderful venture, one of us was highly impressed by the LOTR series especially by resilience of some good-natured hairy-footed creatures called {\sl hobbits}. And viola! {\sl robbit} it was.
+
+\subsection{A bit more}
+Professor A. Gianluca was looking into various motion algorithms and testing them out on real robot MANETs (Mobile Ad-Hoc NETworks). These were contructed so that an algorithm decided each robot's coordinates according to some predefined objective. For example, we have 5 robots that are to surround a randomly moving ball, then follow it. Now various algorithms are possible and testing each of them on the physical plane is quite hectic, believe me. So he decided that he needed something on a simulated environment. Thats where we came in.
+
+\ns
+So we started up with some sample codes and created a 3D environment consisting an experimentation plane some moveable robots, a ball, and some lighting. Gradually we progressed from keyboard view control to mouse control, from a dumb pink floor ({\small what were we thinking then?!}) and box-like robots to a shiny chessboard floor, from crappy to perfect snapshots and even video recording. Now you could even place obstacles on the chessboard to see if your robots can see them.
+
+\newpage
+
+%%
+%% section: how to use this manual %%
+%%
+\section{How to use this manual}
+\subsection{Conventions}
+We'll be following some conventions in the part of the manual that follows. They are noted in Table \ref{formathelp}.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | l |}
+\hline
+Text style	& What you're looking at \\
+\hline
+{\tt text}	& a file name \\
+{\rm text}	& a function name \\
+{\it text}	& a variable name \\
+{\sc text}	& a linux package name \\
+\hline
+\end{tabular}
+\caption{\sf Formatting conventions used in manual}
+\label{formathelp}
+\end{table}
+
+\newpage
+
+%%
+%% section: installation %%
+%%
+\section{Installation}
+\subsection{Prerequisites}
+We used the following libraries as part of our project.
+
+\begin{itemize}
+\item OpenGL \\
+The Intel {\bf Open} {\bf G}raphics {\bf L}ibrary is a set of data structures, and functions to implement 3 dimensional scene rendering.
+
+\item GLU \\
+The Open{\bf GL} {\bf U}tility Library has some routines that provide higher-level drawing routines from the more primitive routines that OpenGL provides.
+
+\item GLUT \\
+The Open{\bf GL} {\bf U}tility {\bf T}oolkit is a library of utilities which primarily perform system-level I/O with the host operating system. Functions performed include window definition, window control, monitoring of keyboard and mouse input, and drawing some geometric primitives.
+
+\ns
+Together OpenGL, GLU, and GLUT are used in game graphics, etc. Here they serve as the foundation for rendering 3 dimensional objects like the robots, obstacles, the floor, the ball, etc. They also provide facilities for GUI, windowing, etc. which we used to our advantage.
+
+\item OpenCV \\
+The Intel {\bf Open} {\bf C}omputer {\bf V}ision Library is a set of data structures, and functions for image handling and processing. We used its features of image saving and video recording to provide researchers a output format more appealing than boring text files containing infinite coordinates, velocities, orientations, etc.
+\end{itemize}
+
+\ns
+The above prerequisites may be obtained and installed as follows.
+\begin{itemize}
+\item Windows systems
+	\begin{itemize}
+	\item C/C++ compiler \\
+We used Microsoft Visual C/C++ 6 compiler. We have provided the workspace we created in the package under {\tt source/win32/Robbit.dsw}. This may be used directly for further development.
+	\item OpenGL, GLU, GLUT \\
+We have provided the GLUT installation package along with our distribution. It maybe found under {\tt libra\-ries/glut/}. Installation instructions are present in {\tt libraries/glut/README}
+	\item OpenCV \\
+	This may be obtained from \href{http://sourceforge.net/projects/opencvlibrary/}{SourceForge\textsuperscript{\textregistered}}. A windows installer is available, which provides the basic header files, dynamically linked libraries, etc.
+		
+	\ns
+	Please read \href{openCV instructions.pdf}{\texttt{openCV instructions.pdf}} in case you plan to set up your own workspace, in which case, you will need to configure it to find required files from the OpenCV installation.
+	\end{itemize}
+\item Linux/UNIX systems
+	\begin{itemize}
+	\item C/C++ compiler \\
+	We used GNU C compiler GCC4.1.2 ({\sc gcc}), which is available from \href{http://www.gnu.org}{http://www.gnu.org}.
+	\item OpenCV \\
+The source code from this library is available at \href{http://sourceforge.net/projects/opencvlibrary/}{SourceForge\textsuperscript{\textregistered}}. Note that since video support is essential for our project to be fully functional, it is necessary that you build OpenCV from sources with {\sc ffmpeg} (a library of audio/video codecs) support. Please read OpenCV installation instructions (available along with the source package) especially the part dealing with libavcodec (a part of {\sc ffmpeg}) support. For the same reason, it is recommended that OpenCV binaries ({\sc libcv0.9.7-0}, {\sc libhighgui0.9.7-0}, {\sc libhighgui-dev}, {\sc libcv-dev} or their later releases) not be used, unless the developer is sure that {\sc ffmpeg} support is built into the binary.
+	\item OpenGL, GLU, GLUT \\
+The linux packages {\sc glutg3}, {\sc glutg3-dev} must be installed along with their dependencies, including hardware dependent drivers. A package manager like {\sc synaptic} will be able to tell you these packages and install them for you. To test OpenGL installation, one may use a program like {\sc glxgears}.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Installation steps}
+The source may be obtained from the project webpage: \href{http://webuser.unicas.it/robbit}{http://webuser.unicas.it/robbit} or SourceForge: \href{http://sourceforge.net/projects/robbit/}{http://sourceforge.net/projects/robbit/}.
+
+\begin{itemize}
+\item Windows systems \\
+After setting up the prerequisites, and adding OpenCV folders to the project include directories, simply open the workspace, compile {\tt Robbit.cpp}, and build a Release of the project. The final executable shall then be available in {\tt source/win32/Release}.
+\item Linux/UNIX systems \\
+A makefile, {\tt Makefile} has been provided that takes care of the compilation, linking, etc. Use the command below.
+
+\begin{verbatim}
+$ make Robbit
+\end{verbatim}
+The binaries are produced and moved into the directory {\tt bin}. Add this directory to the PATH variable if you may require frequent use of the binary.
+\end{itemize}
+
+\newpage
+
+%%
+%% section: features %%
+%%
+\section{Features}
+
+We have endeavoured to make the interface as user-friendly and intuitive as possible. Apart from expected features like pause/play, replay, exit, increase/decrease speed, we have provided the following features.
+\begin{enumerate}
+\item Changing camera location, viewing direction and zoom
+\begin{enumerate}
+\item intuitive mouse controlled movement of the camera \\
+This is easier to control than a keyboard control which involves delay and low resolution of movement.
+\item options for viewing from positions directly above the board (Top view), and from just above each robot \\
+These allow close observation of the arena and may help improvement of the algorithm under test.
+\item Zoom in/out
+\end{enumerate}
+
+\item Save snapshot \\
+This function reads pixels from the frame buffer and processes them into a JPEG image using built-in OpenCV library functions. Images are saved in the working directory with the following file name format.
+	\begin{verbatim}
+	capture_<time_int>_<theta>_<phi>.jpg
+	\end{verbatim}
+Here \texttt{theta}, \texttt{phi} refer to $\theta$ and $\phi$ of the OpenGL camera position with respect to the spherical coordinate system.\footnote{\sf $x=\rho\sin\phi\cos\theta, \,y=\rho\sin\phi\cos\theta, \,z=\rho\cos\phi. \, \rho=250 units $ has been set constant at the start of the animation.} \texttt{time\_int} refers to the time (in integer casted form) when the snapshot is taken.
+
+\item Save video \\
+This function uses built-in OpenCV library functions to write frames to an AVI file. The codec to be used can be selected in Windows (A pop-up window shows the available codecs for video compression. One may be selected.) whereas it is restricted to \texttt{DIVX} codec in linux environment. Default \emph{frames per second} (fps) is 25 fps. Videos are saved in the working directory with the following file name format.
+	\begin{verbatim}
+	capture_<start_time_int>_<theta>_<phi>.avi
+	\end{verbatim}
+Here \texttt{start\_time\_int} refers to the time (in integer casted form) from which video capture starts. \texttt{theta}, \texttt{phi} again refer to $\theta$ and $\phi$ are the respective values of the start frame view. Please note that enabling video recording reduces rendering speed and performance in general, due some inherent delay in the used OpenGL function to capture the screen. This feature is currently under some investigation due  to some bug reports.
+
+\item Info Box \\
+This is a sub window (within the animation window) that shows various runtime information. It shows the last command passed, the zoom level, $\theta$, $\phi$, etc. \\
+Please note that enabling enabling Info box option also reduces rendering speed and performance, in general due some inherent delay in rapidly rendering changing text.
+
+\item Obstacles \\
+We have included the facility of allowing the user to define his own testing environment by placing obstacles of arbitrary dimensions as required. For this purpose, all such obstacle information are to saved in a file {\tt Obstacle.txt} in a specified format noted in the file itselfin its commented part (lines starting with '\%'). A sample obstacled environment is given so that the user may understand the format easier.
+
+\item Coordinate generation \\
+Earlier, we relied solely on an input file, the filename of which was stored in {\it input\_file\_name} in {\tt Definitions.h} which is by default, set to {\tt output\_pos.log}. This file contains the coordinates of the various robots and ball at many time samples in a specified format mentioned in its commented part (lines starting with '\%'). \\
+However now the user also has the option of adding his own algorithm into the source code itself, so he may test it without first generating an intermediate file. This is achieved through 2 sub-choices.
+	\begin{itemize}
+	\item You may opt for an online implementation of your algorithm. Here you must put your algorithm inside function {\it GetNextFrame()}. You are expected to set all the values of the elements of the frame object {\it current}. An example is provided for reference. Note that CPU intensive algorithms may slow down the simulation, making it appear paused for short durations. In this respect, the next option is more preferable.
+	\item You may opt to create an input file of the form of {\tt output\_pos.log} (supplied) using your own algorithm. However all writing operations must be stopped before the simulation starts. Here you are expected to put your algorithm to generate the input file strictly in the format shown in {\tt output\_pos.log} inside the function {\it WriteInputFile()}.
+	\end{itemize}
+
+\item Trails \\
+We have provided for tracing of each objects motion path using the concept of trails. This feature may be switched off if required.
+
+\item Median of robots \\
+We have also rendered a point on the Experimental plane equivalent to the median of the positions of all the bots. In the experiment suggested in the introduction, the distance between this median and the ball may serve as a measure of the efficiency of the algorithm.
+
+\item Support for different robot designs \\
+We have added a choice between two hardcoded designs \textbf{KheperaII} and \textbf{KheperaIII}. A developer may added more designs if required.
+
+\item Collision detection \\
+We have added a support for detection of collision of the robots with the ball, the obstacles and other robots. The robots change color to red, green and yellow on colliding with another robot, the ball and an obstacle, respectively.
+
+\end{enumerate}
+
+\newpage
+
+%%
+%% section: usage %%
+%%
+\section{Usage}
+\subsection{Code flow}
+The present code executes in the following sequence.
+\begin{enumerate}
+\item On running the executable, the user is first asked which of the following modes of frame generation should be followed.
+	\begin{enumerate}
+	\item Use existing {\tt output\_pos.log} file for coordinate data input.
+	\item Generate cooridnates for next frame using a function {\rm GetNextFrame()}. This contains the algorithm for generating coordinates, velocities and orientations of the robots at any instant with/without previous frames' information. The function presently contains a sample code which may be replaced by a user with a more practical code. 
+	\item Generate new {\tt output\_pos.log} using a user-defined algorithm stored in {\rm WriteNewFrame()} and then use it for simulation
+	\end{enumerate}
+\item Obstacles if any are read into memory from the file {\tt Obstacle.txt} by function {\rm ReadObstacle()}.
+\item Then the user is asked which design (Khepera II or Khepera III) is to be used for simulation.
+\item The simulation is started. Now the user may control the simulation using keyboard shortcuts noted in Table \ref{keyshort} or using the right-click menu.
+\end{enumerate}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | l |}
+\hline
+Shortcut								& Action \\ \hline
+\multicolumn{2}{|c|}{Animation control}	\\ \hline
+\texttt{\textless escape\textgreater}	& Stop and Exit the simulation at any time \\ \hline
+\texttt{\textless space\textgreater}	& Toggle pause/play of simulation \\ \hline
+\texttt{r}								& Replay animation from start \\ \hline
+\multicolumn{2}{|c|}{View control}		\\ \hline
+\texttt{0}								& Return view to isometric view \\ \hline
+\texttt{t}								& Change view to Top view \\ \hline
+\texttt{s}								& Take a snapshot of the simulation \\ \hline
+\texttt{v}								& Toggle video recording of the simulation \\ \hline
+\texttt{+/-}							& Zoom in/out \\ \hline
+\multirow{2}{*}{\textless\texttt{number}\textgreater} & Shift OpenGL camera on to top of \\ 
+	& robot numbered \texttt{number}	\\ \hline
+\multicolumn{2}{|c|}{Accessories}		\\ \hline
+\texttt{i}								& Toggle display of Information box \\ \hline
+\texttt{o}								& show/hide obstacles \\ \hline
+\texttt{n}								& Toggle numbering of the displayed robots \\ \hline
+\end{tabular}
+\caption{\sf Runtime keyboard shortcuts. Note: Uppercase forms of the specified characters may also be used with the same effects.}
+\label{keyshort}
+\end{table}
+
+\subsection{Right-click menu}
+All the keyboard options have been included in the right-click menu. Over and above these, the following animation options are also available.
+\begin{enumerate}
+\item Light control \\
+Options for increasing number of enabled lights up to a maximum of 4 lights have been provided. The light source positions, color and other parameters are configurable in \texttt{Definitions.h}
+\item Animation speed control \\
+Options for increasing speed of animation from 1X up to a maximum of 25X have been provided.
+\item Robot design \\
+At the moment, two designs are hardcoded and selectable. These are that of KheperaII and KheperaIII. Selection of design may be done before start of simulation or at runtime (using right-click menu).
+\item Trail display \\
+The user may opt to switch off display of trails during runtime.
+\end{enumerate}
+
+\newpage
+
+%%
+%% section: development %%
+%%
+\section{Development}
+\subsection{Data structures}
+We created a class {\it frame}, containing the following elements and methods.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|l|l|} \hline
+Data Type & Variable/Function name			& What it does \\
+\hline
+float	& {\it time}						& current time of the frame \\
+float	& {\it time\_step}					& current delay time (for sleep functions) \\
+\hline
+int		& {\it bot\_design}					& 1: Khepera II; 2: Khepera III \\
+float	& {\it bot\_x		[no\_of\_bots]}	& x-coordinate of the robots' position [cm] \\
+float	& {\it bot\_y		[no\_of\_bots]}	& y-coordinate of the robots' position [cm] \\
+float	& {\it bot\_vx		[no\_of\_bots]}	& x-component of the robots' velocity [cm/sec] \\
+float	& {\it bot\_vy		[no\_of\_bots]}	& y-component of the robots' velocity [cm/sec] \\
+float	& {\it bot\_orient	[no\_of\_bots]}	& orientation of the robots [rad] \\
+float	& {\it bot\_vorient	[no\_of\_bots]}	& angular velocity [rad/sec] \\
+\multirow{2}{*}{int} & \multirow{2}{*}{{\it bot\_hit [no\_of\_bots][2]}} & {\it bot\_hit[\textless bot\_number\textgreater ][0]}\/: not hit (0) or hit (1) \\ 
+	& &	{\it bot\_hit[\textless bot\_number\textgreater ][1]}\/: time of hit for each bot \\
+
+float	& {\it bot\_center\_x}				& x-coordinate of current cetroid of the robots \\
+float	& {\it bot\_center\_y}				& y-coordinate of current cetroid of the robots \\
+\hline
+float	& {\it ball\_x}						& x-coordinate of the balls' position [cm] \\
+float	& {\it ball\_y}						& y-coordinate of the balls' position [cm] \\
+float	& {\it ball\_vx}					& x-component of the balls' velocity [cm/sec] \\
+float	& {\it ball\_vy}					& y-component of the balls' velocity [cm/sec] \\
+\hline
+\multirow{3}{*}{(methods)} & {\it frame()}	& constructor \\
+ & {\it update(int mode, ifstream fp)}		& reads input file and updates object data \\
+ & {\it render\_frame()}					& renders the frame data on using OpenGL functions \\
+\hline
+\end{tabular}
+\caption{\sf Elements of class {\it frame}}
+\label{classelem}
+\end{table}
+It contains all the information required to render a frame. This information (as discussed earlier, may be obtained from the input file {\tt output\_pos.log} or using an algorithm (directly or indirectly).
+
+\subsection{Code organisation}
+The source code is organised as follows. Each function and method, \texttt{function\_name()} is contained in its separate header file named \texttt{function\_name.h}. The filenames and an overview of the work of the corresponding functions are noted in Table \ref{filename}. The file \texttt{Robbit.cpp} contains the main code to be compiled that uses these header files.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{| r | l |}
+\hline
+File								& What it does \\
+\hline
+\texttt{BotHit.h}					& Determines which robot has been hit and marks it \\
+\texttt{Definitions.h}				& Animation parameter definitions \& includes \\
+\texttt{DetectObstacleCollision.h}	& Detects the collision beteween any robot and any obstacle \\
+\texttt{Display.h}					& Main function which draws all the things in main window \\
+\texttt{DistancePointLine.h}		& Returns if any robot has collided with a wall \\
+\texttt{DrawFloor.h}				& Draws the floor on which robots are moving \\
+\texttt{DrawObstacle.h}				& Renders the obstacles given in the ASCII file \\
+\texttt{DrawRightClickMenu.h}		& Draws the right click menu  \\
+\texttt{DrawString.h}				& Draws 2D-text in the window \\
+\texttt{DrawTrails.h}				& Draws trails of robots and ball \\
+\texttt{FrameRenderFrame.h}			& This renders all elements of the frame object in the simulation window \\
+\texttt{FrameUpdate.h}				& Reads from the ASCII log file and creates the current frame \\
+\texttt{GetNextFrame.h}				& Creates the object for the next frame based on a user-defined algorithm \\
+\texttt{Init.h}						& Initilization of the main window \\
+\texttt{KeyEventHandler.h}			& Monitors the keyboard input \\
+\texttt{KillAnimation.h}			& Kills the animation at any time as required \\
+\texttt{MenuSelect.h}				& Monitors the right click menu Select \\
+\texttt{Motion.h}					& Rotate the scene in 3D with the left mouse button \\
+\texttt{Mouse.h}					& Monitors the mouse clicks \\
+\texttt{NextNo.h}					& Takes a string and returns the next identifiable number \\
+\texttt{OutputCharacter.h}			& Draws 3D-strings in the desired location (x, y, z) in window \\
+\texttt{PlayControl.h}				& controls the animation (speed, begin \& end) \\
+\texttt{PositionKhepera2.h}			& Draws the KheperaII Robots with all the specifications \\
+\texttt{PositionKhepera3.h}			& Draws the KheperaIII Robots with all the specifications \\
+\texttt{ReadObstacle.h}				& Sets the corresponding Obstacle parameters from  \\
+\texttt{Reshape.h}					& Determines the Eye/camera location \\
+\texttt{RobotClass.h}				& Contains the definitions of class \texttt{frame} \\
+\texttt{SubDisplay.h}				& Draws the sub-window (info-box) \\
+\texttt{SubReshape.h}				& Reshape for the Sub-Window \\
+\texttt{VideoDump.h}				& Saves the current running simulation as video in AVI format \\
+\texttt{WindowDump.h}				& Saves an animation snapshot (Screenshot) \\
+\texttt{WriteInputFile.h}			& Write the input file \texttt{output\_pos.log} using user-defined algorithm \\
+\hline
+\texttt{Robbit.cpp}					& Intializes the main simulation window \& its parameters \\\hline
+\end{tabular}
+\caption{\sf The files involved and what they do}
+\label{filename}
+\end{table}
+
+\end{document}
