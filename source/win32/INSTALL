@@ -1,0 +1,22 @@
+
+All the dependencies must be fulfilled prior to installation. see website [ http://webuser.unicas.it/robbit/ ] for all the dependencies.
+
+Open Microsoft Visual Studio 2005 Solution robbit.sln, which can be found in vc2005 directory.
+Build the solution. robbit.exe will be created in the same directory.
+
+For windows installation using VC2005, the external libraries used are present in the include/ folder. 
+This includes FL headers and libraries (static), and LibPNG headers and libraries (static). 
+OpenGL headers and DLLs need to installed separately. The installer for GLUT on win32 is given in the folder 
+'glut-3.7.6-win32 installer/' folder.
+
+Presently, the solution is built in release mode only. Feel free to experiment with the debug mode. (you will have to include the debug 
+libraries like fltkd.lib & the like)
+Please note that the solution is configured to use the library files with relative locations, hence I shall 
+take relocating this (include/) folder as an offence :P.
+
+In case you are planning to create your own vc2005 project (god forbid), do have a look at the original project 
+settings. Full Optimization is recommended. You may also point the include directories to your own existing installation 
+of FLTK and PNG libraries. Don't forget to add the following to the additional dependencies for your Linker: 
+"opengl32.lib wsock32.lib comctl32.lib glaux.lib glu32.lib fltk.lib fltkgl.lib libpng.lib".
+
+Cheers.

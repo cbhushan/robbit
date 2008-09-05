@@ -1,0 +1,343 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0109 
+header_name {.h} 
+code_name {.cxx}
+comment {// ------------------------------------------------------------------------------------//
+//
+//	This program is part of 3-D Simulator ' Robbit '
+//	visit:   http://webuser.unicas.it/robbit/  for details
+//	
+//	This program is free software published  under the terms of 
+//	the GNU General Public License, Free Software Foundation, Inc.
+//	visit:  http://www.gnu.org/licenses/gpl.html for details
+//
+//	Developers(alphabetical list) : 
+//	* Antonelli Gianluca
+//	* Arrichiello Filippo
+//	* Bhushan Chitresh
+//	* Prakash Chander
+//	* Purkayasth Sayandeep
+//	
+//	 Groups(alphbetical) :
+//	* KRAIG, Indian Institute of Technology, Kharagpur, India
+//	* LAI, Università degli Studi di Cassino, Italy
+//	
+// ------------------------------------------------------------------------------------/
+//! CLass to build the whole GUI
+/*! This class is created with FLUID (Fast Light User-Interface Designer). It also monitors all the events and callback
+*/} {selected not_in_source in_header
+} 
+
+class RobbitUI {open
+} {
+  Function {RobbitUI()} {open
+  } {
+    Fl_Window RobbitMainWindow {
+      label {Robbit v 4.0.0}
+      callback {display->setExit();}
+      xywh {24 51 950 600} type Double box THIN_UP_BOX color 7 labelfont 4 resizable visible
+    } {
+      Fl_Value_Slider indexSlider {
+        callback {display->setIndex((int)o->value());}
+        xywh {0 570 800 30} type {Horz Knob} box PLASTIC_THIN_DOWN_BOX color 45 maximum 100 step 1 deactivate
+      }
+      Fl_Box display {
+        xywh {0 0 800 570} resizable
+        class Frame_Display
+      }
+      Fl_Group {} {open
+        xywh {800 0 150 600} box THIN_DOWN_BOX
+      } {
+        Fl_Group {} {
+          xywh {800 0 150 10} resizable
+        } {}
+        Fl_Group {} {
+          xywh {800 10 150 590} color 26
+        } {
+          Fl_Button ButtonAbout {
+            label {&About}
+            callback {AboutWindow->show();
+textrobbit->load("index.html");}
+            xywh {808 15 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 1
+          }
+          Fl_Light_Button ToggleAutoView {
+            label {A&uto view}
+            callback {display->setAutoView(o->value());
+if(o->value())
+ToggleTopView->deactivate();
+else
+ToggleTopView->activate();}
+            xywh {808 61 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 88
+          }
+          Fl_Light_Button ToggleTopView {
+            label {&Top view}
+            callback {display->setTopView(o->value());
+if(o->value())
+ToggleAutoView->deactivate();
+else
+ToggleAutoView->activate();}
+            xywh {808 107 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 88
+          }
+          Fl_Light_Button ToggleTrails {
+            label {Trai&ls}
+            callback {display->setTrails(o->value());}
+            xywh {808 154 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 88
+          }
+          Fl_Light_Button ToggleObstacles {
+            label {&Obstacles}
+            callback {display->setObstacles(o->value());}
+            xywh {808 200 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 88
+          }
+          Fl_Light_Button ToggleBotNumbering {
+            label {Bot &numbering}
+            callback {display->setBotNumbering(o->value());}
+            xywh {808 247 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 88
+          }
+          Fl_Button ButtonAdvSettings {
+            label {A&dv. Settings}
+            callback {display->initAdvWindow();
+AdvSettingsWindow->show();}
+            xywh {808 293 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 1
+          }
+          Fl_Button ButtonScrrenshot {
+            label {&Screenshot}
+            callback {display->CaptureScreenshot();}
+            xywh {808 340 134 30} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 1
+          }
+          Fl_Choice RenderSpeedMenu {
+            label Speed
+            xywh {866 390 65 27} box SHADOW_BOX down_box FLAT_BOX
+          } {
+            MenuItem {} {
+              label {0.5X}
+              callback {display->setRenderSpeed(0.5);}
+              xywh {860 50 30 20}
+            }
+            MenuItem {} {
+              label 1X
+              callback {display->setRenderSpeed(1);}
+              xywh {860 40 30 20}
+            }
+            MenuItem {} {
+              label 2X
+              callback {display->setRenderSpeed(2);}
+              xywh {860 40 30 20}
+            }
+            MenuItem {} {
+              label 5X
+              callback {display->setRenderSpeed(5);}
+              xywh {860 60 30 20}
+            }
+            MenuItem {} {
+              label 10X
+              callback {display->setRenderSpeed(10);}
+              xywh {860 70 30 20}
+            }
+            MenuItem {} {
+              label MAX
+              callback {display->setRenderSpeed(0);}
+              xywh {860 80 30 20}
+            }
+          }
+          Fl_Choice BotMenu {
+            label Bot open
+            xywh {836 434 106 27} box SHADOW_BOX down_box FLAT_BOX
+          } {
+            MenuItem KheperaII {
+              label {Khepera II}
+              callback {display->selectBot(1);}
+              xywh {860 50 30 20}
+            }
+            MenuItem KheperaIII {
+              label {Khepera III}
+              callback {display->selectBot(2);}
+              xywh {860 50 30 20}
+            }
+            MenuItem Custom {
+              label Custom
+              callback {custom_robot_window->show();}
+              xywh {860 60 30 20}
+            }
+          }
+          Fl_Choice LightMenu {
+            label Lights
+            xywh {874 478 43 27} box SHADOW_BOX down_box FLAT_BOX
+          } {
+            MenuItem Light1 {
+              label 1
+              callback {display->setLights(1);}
+              xywh {860 60 30 20}
+            }
+            MenuItem Light2 {
+              label 2
+              callback {display->setLights(2);}
+              xywh {860 60 30 20}
+            }
+            MenuItem Light3 {
+              label 3
+              callback {display->setLights(3);}
+              xywh {860 80 30 20}
+            }
+            MenuItem Light4 {
+              label 4
+              callback {display->setLights(4);}
+              xywh {860 90 30 20}
+            }
+          }
+          Fl_Button ButtonReset {
+            label {Reset All}
+            callback {display->setReset();}
+            xywh {829 518 95 32} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 1 labelfont 1
+          }
+          Fl_Button ButtonPlayPause {
+            label {@||}
+            callback {display->setPlayPause();}
+            xywh {829 558 40 35} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 1 labelfont 1
+          }
+          Fl_Button ButtonStop {
+            label {@-2square}
+            callback {display->setStop();}
+            xywh {884 558 40 35} box PLASTIC_UP_BOX down_box PLASTIC_DOWN_BOX color 7 selection_color 1 labelfont 1
+          }
+        }
+      }
+    }
+    Fl_Window AboutWindow {
+      label About
+      xywh {384 147 500 355} type Double hide non_modal
+    } {
+      Fl_Help_View textrobbit {
+        xywh {10 10 480 335}
+      }
+    }
+    Fl_Window SplashWindow {
+      xywh {440 237 350 275} type Double align 0 hide hotspot non_modal
+    } {
+      Fl_Help_View htmlSplash {
+        xywh {5 5 340 230} deactivate
+      }
+      Fl_Button {} {
+        label About
+        callback {extern clock_t start_time;
+SplashWindow->hide();
+start_time=clock()-3*CLOCKS_PER_SEC;
+AboutWindow->show();
+textrobbit->load("index.html");}
+        xywh {18 242 75 25}
+        code0 {\#include<time.h>}
+      }
+      Fl_Return_Button {} {
+        label Close
+        callback {extern clock_t start_time;
+SplashWindow->hide();
+start_time=clock()-3*CLOCKS_PER_SEC;}
+        xywh {255 242 75 25}
+        code0 {\#include<time.h>}
+      }
+    }
+    Fl_Window custom_robot_window {
+      label {Custom Robot}
+      xywh {189 338 195 190} type Double hide hotspot non_modal noborder
+    } {
+      Fl_Input height {
+        label {Height:}
+        xywh {88 25 70 24}
+      }
+      Fl_Input radius {
+        label {Radius:}
+        xywh {88 59 70 24}
+      }
+      Fl_Text_Display {} {
+        label {For Cylindrical Robot}
+        xywh {100 120 0 0} deactivate
+      }
+      Fl_Return_Button {} {
+        label OK
+        callback {display->setCustomRobot(atof(height->value()),atof(radius->value()
+));
+custom_robot_window->hide();}
+        xywh {120 140 52 30}
+      }
+    }
+    Fl_Window AdvSettingsWindow {
+      label {Advanced Settings}
+      xywh {148 210 450 300} type Double hide hotspot non_modal
+    } {
+      Fl_Tabs {} {open
+        xywh {10 10 430 240}
+      } {
+        Fl_Group {} {
+          label Arena open
+          xywh {10 40 430 210}
+        } {
+          Fl_Input maxy {
+            label {Max Y}
+            callback {display->setArena(atof(maxx->value()),atof(minx->value()),atof(maxy->value()),atof(miny->value()));}
+            xywh {196 89 60 24} type Float labeltype EMBOSSED_LABEL align 5 when 1
+          }
+          Fl_Input miny {
+            label {Min Y}
+            callback {display->setArena(atof(maxx->value()),atof(minx->value()),atof(maxy->value()),atof(miny->value()));}
+            xywh {196 176 60 24} labeltype EMBOSSED_LABEL align 6 when 1
+          }
+          Fl_Input maxx {
+            label {Max X}
+            callback {display->setArena(atof(maxx->value()),atof(minx->value()),atof(maxy->value()),atof(miny->value()));}
+            xywh {278 133 60 24} labeltype EMBOSSED_LABEL align 8 when 1
+          }
+          Fl_Input minx {
+            label {Min X}
+            callback {display->setArena(atof(maxx->value()),atof(minx->value()),atof(maxy->value()),atof(miny->value()));}
+            xywh {113 133 60 24} type Float labeltype EMBOSSED_LABEL when 1
+          }
+        }
+        Fl_Group {} {
+          label Others open
+          xywh {10 40 430 210} hide
+        } {
+          Fl_Input ball_radius {
+            label {Radius of Ball}
+            callback {display->setBallRadius(atof(o->value()));}
+            xywh {59 53 65 24} type Float align 8
+          }
+          Fl_Input trail_points {
+            label {No of trail points}
+            callback {display->setTrailPoints(atoi(o->value()));}
+            xywh {59 93 65 24} type Int align 8
+          }
+          Fl_Input coloured_steps {
+            label {No of Coloured Steps(for collision)}
+            callback {display->setColouredSteps(atoi(o->value()));}
+            xywh {59 133 65 24} type Int align 136
+          }
+          Fl_Slider graphics_quality {
+            label {Graphics Quality}
+            callback {display->setGraphicsQuality((int)(o->value()*10),(int)(o->value()*4));}
+            xywh {59 183 325 24} type {Horz Knob} align 5 minimum 1 maximum 6 step 0.1
+          }
+          Fl_Output {} {
+            label Low
+            xywh {56 218 0 0} align 8
+          }
+          Fl_Output {} {
+            label High
+            xywh {352 218 0 0} align 136
+          }
+          Fl_Output {} {
+            label { (High CPU usage)}
+            xywh {262 234 0 0} align 136
+          }
+        }
+      }
+      Fl_Return_Button {} {
+        label OK
+        callback {AdvSettingsWindow->hide();}
+        xywh {360 260 80 30}
+      }
+    }
+  }
+  Function {show()} {open return_type void
+  } {
+    code {RobbitMainWindow->show();} {}
+  }
+} 

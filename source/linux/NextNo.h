@@ -33,26 +33,26 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
+  //! Returns next number reading from a string
+  /*!Numbers should be seperated by space or comma. It is used to read the numbers form the Obstacle ASCII file. It also updates the string pointer position
+    \param *string Pointer to the string
+    \param st_pos position of current string pointer (passed by reference)
+  */
+float next_no(char *string, int &st_pos) {
+  char temp_string[20]="a"; // Temporary string
+  int num_found=0;	// 1 if number is found, 0 if not found
+  int counter=0;	// Simple local counter
 
-float next_no(char *string, int &st_pos)
-{
-	char temp_string[20]="a";	// Temporary string
-	int num_found=0;			// 1 if number is found, 0 if not found
-	int counter=0;				// Simple local counter
-
-	while(((string[st_pos]!=' ' && string[st_pos]!=',' && string[st_pos]!=')') || !num_found) && string[st_pos]!='\0')
-	{
-		if(string[st_pos]!=',' && string[st_pos]!=')')
-		{
-			temp_string[counter]=string[st_pos];
-			counter++;
-		}
+  while(((string[st_pos]!=' ' && string[st_pos]!=',' && string[st_pos]!=')') || !num_found) && string[st_pos]!='\0') {
+    if(string[st_pos]!=',' && string[st_pos]!=')') {
+      temp_string[counter]=string[st_pos];
+      counter++;
+    }
 		
-		if(string[st_pos]!=' ' && string[st_pos]!=',' && string[st_pos]!=')')
-		{
-			num_found=1;
-		}
-		st_pos++;
-	}
-	return(atof(temp_string));
+    if(string[st_pos]!=' ' && string[st_pos]!=',' && string[st_pos]!=')') {
+      num_found=1;
+    }
+    st_pos++;
+  }
+  return(atof(temp_string));
 }

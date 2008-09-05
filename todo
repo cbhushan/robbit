@@ -1,5 +1,3 @@
     
-    * Video recording support under Windows and Linux systems is unstable.
-    Rendering of floor when video recording stops. Also render speed decerases drastically.
-    
-    * Latest windows source needs to be adapted for Linux systems.
+    * Video recording
+    * Sensors Control

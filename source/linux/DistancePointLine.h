@@ -20,20 +20,21 @@
 //	
 // ------------------------------------------------------------------------------------//
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *	
-*	DistancePointLine.h  v 3.0 , 2007-12-05, 10:47:00 IST
-*
-*	Returns 1 if the any robot has collided to a wall 
-*	[ calculates the distance between center of the robot and wall ]
-*
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+//! Contains x, y coordinates of a generic point. 
+/*!
+*/
 typedef struct tagXY
 {
     float X, Y;
 }
 XY;
 
+//! Distance between two points 
+/*!
+\param Point1 XY point
+\param Point2 XY point
+\return Distance between two points as float
+*/
 float Magnitude( XY *Point1, XY *Point2 )
 {
     XY Vector;
@@ -42,7 +43,14 @@ float Magnitude( XY *Point1, XY *Point2 )
     return (float)sqrt( Vector.X * Vector.X + Vector.Y * Vector.Y );
 }
 
-int DistancePointLine( XY *Point, XY *LineStart, XY *LineEnd )
+//! Evaluates if a bot lies on a line given by two points
+/*!
+\param Point XY point, center of robot
+\param LineStart XY point, marks a point on the line
+\param LineEnd XY point, marks a second point on the line
+\return 0, if bot is not on the line; 1, if it is.
+*/
+int DistancePointLine( XY *Point, XY *LineStart, XY *LineEnd, float radius_of_robot )
 {
     float LineMag,x1,x2,y1,y2;
     float U;

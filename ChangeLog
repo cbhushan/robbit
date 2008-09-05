@@ -1,3 +1,21 @@
+v 4.0.0
+Added features:
+
+    * Major improvement in GUI (using FLTK lib)
+    * Customizable Robots
+    * Customizable Arena
+    * Pan view
+    * Auto-rotating view
+    * Time-slider when reading from log files
+
+Others:
+ 
+    * Removed openCV library and added libpng for screenshots<br>
+    * used Standard Template Library for dynamic implementation<br>
+    * Dropped buggy Video recording
+
+
+
 v beta 3.0
 Added features:
 

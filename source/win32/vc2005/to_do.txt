@@ -1,0 +1,3 @@
+
+- dynamic implementation for obstacles - infinte no of obstacle
+- message box

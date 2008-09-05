@@ -1,0 +1,17 @@
+Installation
+
+All the dependencies must be fulfilled prior to installation. see website [ http://webuser.unicas.it/robbit/ ] for all the dependencies.
+
+All the structures and classes are available in .h files, and the methods/functions are available in .c files.
+
+To complie Robbit go to source directory and run: 
+$> cmake . 
+
+then 
+$> make 
+
+To execute run:
+$> ./Robbit
+
+
+Note: Configuration settings can be modified in the file "CMakeLists.txt" before starting the installation.

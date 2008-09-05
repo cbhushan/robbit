@@ -20,36 +20,42 @@
 //	
 // ------------------------------------------------------------------------------------//
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *	
-*	GetNextFrame.h  v 3.0 , 2007-12-05, 10:47:00 IST
-*
-*	Creates the object for the next frame and returns the object
-*	Contains the userdefined algorith for algo check 
-*
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-
-frame get_next_frame()
+//! User defined function to generate next frame data
+/*! A user may define his algorithm to generate the data in Frame_data here.
+*/
+Frame_Data GetNextFrame()
 {
-	frame next = current;
-	int bot_count = 0;
+  Frame_Data next_frame;
 
-	/* algorithm for next frame data STARTS here */
-	
-	/* for example - comment out example and substitute by user defined algorithm */
-	//no_of_bots=4;					// enter number of robots
-	next.ball_x = 70.0;
-	next.ball_y = 70.0;
-	next.time = current.time + 0.08;
-	next.time_step = 0.08;
-	for (bot_count = 0; bot_count < no_of_bots; ++bot_count)
-	{
-		next.bot_x[bot_count] = 60.0 - 0.1*(current.time / 0.08)*(bot_count);
-		next.bot_y[bot_count] = 60.0 - 0.1*(current.time / 0.08)*(bot_count);
-		next.bot_orient[bot_count] =   60.0*(current.time / 0.08)*(bot_count);
-	}
-	
-	/* algorithm for next frame data ENDS here */
+  next_frame.bot_x.resize(no_of_bots);
+  next_frame.bot_y.resize(no_of_bots);
+  next_frame.bot_vx.resize(no_of_bots);
+  next_frame.bot_vy.resize(no_of_bots);
+  next_frame.bot_orient.resize(no_of_bots);
+  next_frame.bot_vorient.resize(no_of_bots);
+  next_frame.bot_hit[0].resize(no_of_bots);
+  next_frame.bot_hit[1].resize(no_of_bots);
 
-	return (next);
+  int bot_count = 0;
+  /*********************************************
+   * algorithm for next frame data below here *
+   *********************************************/
+
+	
+  /* for example - comment out example and substitute by user defined algorithm */
+  //no_of_bots=4;					// enter number of robots
+  next_frame.ball_x = 70.0;
+  next_frame.ball_y = 70.0;
+  next_frame.time = 100;
+  next_frame.time_step = 0.08;
+  for (bot_count = 0; bot_count < no_of_bots; ++bot_count)
+    {
+      next_frame.bot_x[bot_count] = 60.0 /*- 0.1*(current.time / 0.08)*/*(bot_count);
+      next_frame.bot_y[bot_count] = 60.0 /*- 0.1*(current.time / 0.08)*/*(bot_count);
+      next_frame.bot_orient[bot_count] = 60.0/*(current.time / 0.08)*/*(bot_count);
+    }
+	
+  /* algorithm for next frame data ENDS here */
+
+  return (next_frame);
 }
