@@ -1,34 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <title>Robbit by cbhushan</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Robbit</h1>
-        <h2>3D simulator for multiple robot system</h2>
-        <a href="https://github.com/cbhushan/robbit" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+      <header>
+        <h1>Robbit</h1>
+        <p>3D simulator for multiple robot system</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/cbhushan/robbit" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/cbhushan/robbit/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/cbhushan/robbit/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
 <a id="what-is-robbit-" class="anchor" href="#what-is-robbit-" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Robbit ?</h1>
 
 <p>Robbit is a open-source software which provide 3D simulation environment for multiple robot system.  Robbit has been developed thinking in researchers, students, roboticists and hobbyists who want to design, test and simulate mobile robots and research topics like autonomous navigation techniques, obstacle avoidance, artificial intelligence etc. </p>
@@ -41,14 +52,15 @@
 <p>Well, it so happens that one of us was highly impressed by the <a href="http://lotr.wikia.com/wiki/The_Lord_of_the_Rings">Lord of the Rings</a> series especially by resilience of some good-natured hairy-footed creatures called <a href="http://lotr.wikia.com/wiki/Hobbits">hobbits</a>. And voila! Robbit it was. Robots that Hobbles. </p>
 
 <h2>
-<a id="mathmod-paper" class="anchor" href="#mathmod-paper" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mathmod Paper</h2>
+<a id="conference-paper" class="anchor" href="#conference-paper" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conference Paper</h2>
 
-<p>An open source software, named ROBBIT, aimed at the simulation of multiple mobile robots has been developed at the Universita degli Studi di Cassino, Italy together with students coming from the Indian Institute of Technology Kharagpur, India. The main project's objective was to develop a software platform with educational purposes in robotics, computer sciences, non-linear control, behavioral and cognitive sciences. Several potential applications have been identified in order to use this software as a teaching tool for graduate, master thesis and PhD students. ROBBIT is released under the GNU General Public License (GPL). </p>
+<p>Robbit was featured in <a href="http://www.mathmod.at/index.php?id=87">MATHMOD 2009</a> - 6th Vienna International Conference on Mathematical Modelling - took place February 11 - 13, 2009. Please cite following conference proceeding if you use Robbit or its derivatives in your work: </p>
 
-<ul>
-<li>Antonelli Gianluca, Arrichiello Filippo, Bhushan Chitresh, Chiaverini Stefano, and Purkayasth Sayandeep, <strong>ROBBIT: an Open Source Simulator for Education in Robotics</strong>, Proceedings MATHMOD 09 Vienna, I. Troch, F. Breitenecker (ed.); ARGESIM Reports, 35 (2009), ISBN: 978-3-901608-35-3, February 2009, <a href="http://neuroimage.usc.edu/%7Echitresh/papers/ROBBIT_MATHMOD_09.pdf">PDF</a>
-</li>
-</ul>
+<p>Antonelli Gianluca, Arrichiello Filippo, Bhushan Chitresh, Chiaverini Stefano, and Purkayasth Sayandeep, <strong>ROBBIT: an Open Source Simulator for Education in Robotics</strong>, Proceedings MATHMOD 09 Vienna, I. Troch, F. Breitenecker (ed.); ARGESIM Reports, 35 (2009), ISBN: 978-3-901608-35-3, February 2009, <a href="http://neuroimage.usc.edu/%7Echitresh/papers/ROBBIT_MATHMOD_09.pdf">PDF</a></p>
+
+<blockquote>
+<p>Abstract: An open source software, named ROBBIT, aimed at the simulation of multiple mobile robots has been developed at the Universita degli Studi di Cassino, Italy together with students coming from the Indian Institute of Technology Kharagpur, India. The main project's objective was to develop a software platform with educational purposes in robotics, computer sciences, non-linear control, behavioral and cognitive sciences. Several potential applications have been identified in order to use this software as a teaching tool for graduate, master thesis and PhD students. ROBBIT is released under the GNU General Public License (GPL). </p>
+</blockquote>
 
 <h1>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h1>
@@ -97,26 +109,14 @@
 <p>You should have received a copy of the GNU General Public License along with this program.  If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/cbhushan/robbit/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/cbhushan/robbit/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/cbhushan/robbit"></a> is maintained by <a href="https://github.com/cbhushan">cbhushan</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/cbhushan">cbhushan</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-
-            <script type="text/javascript">
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
