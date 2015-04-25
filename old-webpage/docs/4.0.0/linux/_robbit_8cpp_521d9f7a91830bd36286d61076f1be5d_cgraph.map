@@ -1,0 +1,6 @@
+<area shape="rect" href="$class_file___data.html#0a6445b60443c81d14e7e745221aace9" title="Get data from file index." alt="" coords="176,5,307,32">
+<area shape="rect" href="$class_file___data.html#5aff36f54e73953f29d665149bbc19ba" title="Opens the log file and calls BuildFileIndex()." alt="" coords="165,56,317,83">
+<area shape="rect" href="$class_frame___display.html#a5a27b4cf1d9475246cd9b7dddb62518" title="Stops simulation." alt="" coords="161,107,321,133">
+<area shape="rect" href="$_sleep_milli_8h.html#0726b2879ff28a728401952629c49bbe" title="SleepMilli" alt="" coords="203,157,280,184">
+<area shape="rect" href="$class_frame___display.html#62630f3cd5021ee65fb7da5d10055662" title="Updates the current frame data." alt="" coords="144,208,339,235">
+<area shape="rect" href="$class_file___data.html#6140ea6a79f14747ab5e3ecc71770d04" title="Builds index for quick reference within log file." alt="" coords="387,56,552,83">

@@ -1,0 +1,3 @@
+<area shape="rect" href="$class_frame___display.html#67afb42b0734c504599cf62f506edd99" title="Detects collision between an object and any obstacle." alt="" coords="181,5,437,32">
+<area shape="rect" href="$class_frame___display.html#33d7c4e59d6577aa2001ded777c616fa" title="Detects collisions between any of the bots and/or the ball and/or obstacles." alt="" coords="485,5,637,32">
+<area shape="rect" href="$class_frame___display.html#36ebca563b3f263b2d798c48fda61b61" title="Renders the current frame." alt="" coords="685,5,829,32">

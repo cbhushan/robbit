@@ -1,0 +1,207 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{float}
+\floatstyle{plain}
+\newfloat{commandline}{h}{lop}
+\hypersetup{pdfauthor={Sayandeep},
+				pdftitle={Graphical Simulator for Multi-robot Systems},
+				colorlinks}
+\begin{document}
+\title{Graphical Simulator for Multi-robot Systems}
+\author{\href{mailto:chitresh.bhushan@gmail.com}{Chitresh Bhushan} and \href{mailto:deepcyan@gmail.com}{Sayandeep Purkayasth}}
+\date{April 1, 2007}
+\maketitle
+\section{Objective}
+Our objective was to code a OpenGL application that could read the positions and velocities of a given number of robots and render them onto a visual display unit.
+\section{Implementation}
+\subsection{Libraries used}
+We have used the following libraries for graphics rendering and image manipulation.
+\begin{itemize}
+\item \emph{OpenGL} - The Open Graphics Library \\
+This Library has been used for rendering the various scenes onto the display unit.
+\item \emph{GLU} - The OpenGL Utility Library \\
+It has some routines that provide higher-level drawing routines from the more primitive routines that OpenGL provides.
+\item \emph{GLUT} - The OpenGL Utility Toolkit \\
+It is a library of utilities which primarily perform system-level I/O with the host operating system. Functions performed include window definition, window control, monitoring of keyboard and mouse input, and drawing some geometric primitives.
+\item \emph{OpenCV} - The Open Computer Vision library \\
+This Library impements image manipulation routines and has been used to save snapshots of the simulation at runtime and also capture video segments of the simulation.
+\end{itemize}
+\section{Overview}
+We have created a scene containing a grid plane, on which the ball and a number of bots are placed. On starting animation, data is read from the file (line by line, one at a time for each frame) in realtime and next directly rendered on to the screen output. A snapshot (JPG format) or a video (output file format is \texttt{avi}) may be saved. The simulation may be restarted, paused, speeded up/down as required. Also the number of enabled lights may be increased from none (0) to four (4). The position and other light properties may also be set. The number of available lights may also be increased. The OpenGL camera may be relocated on top of any of the robots.
+\section{Compiling and building from source}
+We have built the necessary binaries using GCC 4.1.2 and Microsoft Visual C++ 6.0 compilers. However it is recommended that the same are rebuilt on the target computer.
+\subsection{Windows}
+The Microsoft Visual Studio 6.0 workspace we had created has been provided. OpenCV and OpenGL libraries must be installed before compilation. Please refer to their individual manuals for installation instructions.
+\begin{itemize}
+\item OpenCV \\
+Stable version 1.0 has been used. Source Code is available from its project page on \href{http://sourceforge.net/projects/opencvlibrary/}{\textsc{SourceForge}\textsuperscript{\textregistered}}. \\
+Please read \href{openCV instructions.pdf}{\texttt{openCV instructions.pdf}} for details on setting up a workspace with OpenCV libraries.
+%\texttt{cv.lib, highgui.lib, cxcore.lib, cvaux.lib} are to be added to object/library module in project link settings.
+\item OpenGL, GLU, GLUT \\
+These have been included along with source code.
+\end{itemize}
+\subsection{Linux}
+OpenCV and OpenGL libraries must be installed before compilation. Details follow.
+\begin{itemize}
+\item OpenCV \\
+These are available from this \href{http://sourceforge.net/projects/opencvlibrary/}{\textsc{SourceForge}\textsuperscript{\textregistered}} link. These following packages must be installed. \\
+\texttt{libcv0.9.7-0, libhighgui0.9.7-0, libhighgui-dev, libcv-dev} \\
+Further development might require \texttt{libcvaux0.9.7-0} and \texttt{libcvaux-dev}
+\item OpenGL, GLU, GLUT \\
+These following packages must be installed. \\
+\texttt{glutg3, glutg3-dev} \\
+Hardware dependent drivers are also required. We used \texttt{libglu1-mesa, libglu1-mesa-dev} for MESA video hardware driver.
+\end{itemize}
+A makefile has been provided. Commands are as follows.
+%%
+\begin{commandline}
+\begin{verbatim}
+	$ make Robot_Animation
+\end{verbatim}
+\end{commandline}
+%%
+\section{Usage}
+A menu has been made available on right click within the animation window. This contains all runtime options. The keyboard equivalents are listed in \mbox{\emph{Table 1}}.
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | l |}
+\hline
+Shortcut & Action \\
+\hline
+\multicolumn{2}{|c|}{Animation control} \\
+\hline
+\textless\texttt{escape}\textgreater & Stop and Exit the simulation at any time \\
+\hline
+\textless\texttt{space}\textgreater & Toggle pause/play of simulation \\
+\hline
+\texttt{r} & Replay animation from start \\
+\hline
+\multicolumn{2}{|c|}{View control} \\
+\hline
+\texttt{0} & Return view to isometric view \\
+\hline
+\texttt{t} & Change view to Top view \\
+\hline
+\texttt{n} & Toggle numbering of the displayed robots \\
+\hline
+\texttt{s} & Take a snapshot of the simulation \\
+\hline
+\texttt{v} & Toggle video recording of the simulation \\
+\hline
+\multirow{2}{*}{\textless\texttt{number}\textgreater} & Shift OpenGL camera on to top of \\
+	& robot numbered \texttt{number} \\
+\hline
+\texttt{+} & Zoom in \\
+\hline
+\texttt{-} & Zoom out \\
+\hline
+\multicolumn{2}{|c|}{Accessories} \\
+\hline
+\texttt{i} & Toggle display of Information box \\
+\hline
+\end{tabular}
+\caption{Runtime keyboard shortcuts. Note: Uppercase forms of the specified characters will also work.}
+\end{table}
+\paragraph{Right-click menu}
+All the keyboard options have been included in the right-click menu. Over and above these, the following animation options are also available.
+\begin{enumerate}
+\item Light control \\
+Options for increasing number of enabled lights up to a maximum of 4 lights have been provided.
+\item Animation speed control \\
+Options for increasing speed of animation from 1X up to a manximum of 25X have been provided.
+\end{enumerate}
+\subsection{Major Features}
+\subsubsection{Save snapshot}
+This function reads pixels from the frame buffer and processes them into a JPG image using built-in OpenCV library functions. Images are saved in the working directory with the following file name format.
+\begin{verbatim}
+capture_<time_int>_<theta>_<phi>.jpg
+\end{verbatim}
+Here \texttt{theta}, \texttt{phi} refer to $\theta$ and $\phi$ of the OpenGL camera position with respect to the spherical coordinate system.\footnote{$x=\rho\sin\phi\cos\theta, \,y=\rho\sin\phi\cos\theta, \,z=\rho\cos\phi. \, \rho=250$ units has been set constant for the simulation except while zooming in/out.} \texttt{time\_int} refers to the time (in integer casted form) when the snapshot is taken.
+\subsubsection{Save video}
+This function uses built-in OpenCV library functions to write frames to an AVI file. The codec to be used can be selected in Windows (A pop-up window shows the available codecs for video compression. One may be selected.) whereas it is restricted to \texttt{DIVX} codec in linux environment. Default \emph{frames per second} (fps) is 25 fps. Videos are saved in the working directory with the following file name format.
+\begin{verbatim}
+capture_<start_time_int>_<theta>_<phi>.avi
+\end{verbatim}
+
+Here \texttt{start\_time\_int} refers to the time (in integer casted form) from which video capture starts. \texttt{theta}, \texttt{phi} again refer to $\theta$ and $\phi$ are the respective values of the start frame. \\ \\
+Please note that enabling video recording reduces rendering speed and performance, in general due some inherent delay in the used OpenGL function to capture the screen.
+\subsubsection{Info Box}
+This is a sub window (within the animation window) that shows various runtime information. It shows the last command passed, the zoom level, $\theta$, $\phi$, etc. \\ \\
+Please note that enabling enabling Info box option also reduces rendering speed and performance, in general due some inherent delay in rapidly rendering changing text.
+%
+%
+\section{Technical details and Code editing}
+\subsection{Working}
+The present code works in the following sequence.
+\begin{enumerate}
+\item The anima\-tion co\-ordinate limits are found by reading in the whole \\ \texttt{output\_pos.log} file once. The animation floor is built using these X, Y limits. Then the file read pointer is repositioned to the file beginning.
+\item Now the \texttt{output\_pos.log}\footnote{The file to be read in can be changed directly from the code. Refer \texttt{Definitions.h} for declarations.} file is read in line by line. For each line each frame is rendered, after taking into consideration the time delay between the previous and the present frame times.
+\end{enumerate}
+%
+%
+Our code is organised as follows. All function and variable declarations and include files are included in \texttt{Definitions.h}. \texttt{Robot\_class.h} contains file input routines, and some variable are set here. \texttt{Robot\_Animation.cpp} contains the OpenGL display and OpenCV screen capture routines.
+%
+%
+\begin{table}[ht]
+\centering
+\begin{tabular}{|c|l|}
+\hline
+Function & What it does \\
+\hline
+\multicolumn{2}{|c|}{\texttt{Robot\_Class.h}} \\
+\hline
+\texttt{display\_data} & displays the data \\
+\hline
+\texttt{get\_data} & read the data from input \\
+\hline
+\multirow{2}{*}{\texttt{next\_no}} & finds the next number, reading from the string\\
+ & and updates the string pointer position \\
+\hline
+\multicolumn{2}{|c|}{\texttt{Robot\_Animation.h}} \\
+\hline
+\texttt{position\_robot} & Displays the robots at their respective positions \\
+\hline
+\texttt{init} & Initializes OpenGL display \\
+\hline
+\texttt{display} & Displays the environment and calls \\
+\hline
+\texttt{play\_control} & Controls the start, speed and end of animation \\
+\hline
+\texttt{mouse} & Mouse event Handler \\
+\hline
+\texttt{reshape} & Handler for window resize \\
+\hline
+\texttt{key\_event\_handler} & Handler for keyboard events \\
+\hline
+\texttt{menuSelect} & Menu Funtions \\
+\hline
+\texttt{motion} & Handles the Motion of mouse \\
+\hline
+\texttt{outputCharacter} & Draws the string at any point \\
+\hline
+\texttt{reshape} & Determines the Eye location \\
+\hline
+\texttt{kill\_animation} & Stops the animation \\
+\hline
+\texttt{WindowDump} & Takes the screenshot \\
+\hline
+\texttt{video\_dump} & Records a video \\
+\hline
+\texttt{drawString} & Draws the string in sub-window (2D text) \\
+\hline
+\texttt{subReshape} & reshape for sub-window(info-box) \\
+\hline
+\texttt{draw\_floor} & Draws the floor on which robots are moving \\
+\hline
+\texttt{round\_to\_int} & Rounds off a float to an integer \\
+\hline
+\texttt{sleepMilli} & sleep function for unix using nanosleep()\\
+\hline
+\end{tabular}
+\caption{The functions used and what they do}
+\end{table}
+%
+%
+\end{document}

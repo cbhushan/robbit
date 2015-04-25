@@ -1,0 +1,14 @@
+<area shape="rect" href="$class_frame___display.html#33d7c4e59d6577aa2001ded777c616fa" title="Detects collisions between any of the bots and/or the ball and/or obstacles." alt="" coords="243,5,395,32">
+<area shape="rect" href="$class_frame___display.html#1001ef97a0e6c3ab9ac464d40d0854f4" title="Renders the floor." alt="" coords="232,56,405,83">
+<area shape="rect" href="$class_frame___display.html#40b92d0ce3e6771ab2fe7c425f1b450f" title="Renders obstacle." alt="" coords="220,107,417,133">
+<area shape="rect" href="$class_frame___display.html#2841abf4c8281cc1b0a2a46efe371d84" title="Renders the trails." alt="" coords="231,157,407,184">
+<area shape="rect" href="$class_frame___display.html#e35b158bc7d024a1c11d0653e3162844" title="Initializes OpenGL simulation startup settings." alt="" coords="252,208,385,235">
+<area shape="rect" href="$class_frame___display.html#ed4daf952ad3cd40a948948af5530d59" title="Renders a character at a specific location." alt="" coords="215,259,423,285">
+<area shape="rect" href="$class_frame___display.html#27ed7e56f0ef75d61c0163242a5de139" title="Renders KheperaII bots." alt="" coords="208,309,429,336">
+<area shape="rect" href="$class_frame___display.html#8485de3a576003f99d6e4c1f005a004a" title="Renders KheperaIII bots." alt="" coords="208,360,429,387">
+<area shape="rect" href="$class_frame___display.html#81ef15bc42abaa3b462a29cc0d241e6c" title="Renders custom bots." alt="" coords="197,411,440,437">
+<area shape="rect" href="$class_frame___display.html#cad2092dce565d4204e8a565600ac2c7" title="Resizes the simulation." alt="" coords="237,461,400,488">
+<area shape="rect" href="$class_frame___display.html#67afb42b0734c504599cf62f506edd99" title="Detects collision between an object and any obstacle." alt="" coords="488,5,744,32">
+<area shape="rect" href="$_distance_point_line_8h.html#cb83fc11c1884768d62e276ab5becdab" title="Evaluates if a bot lies on a line given by two points." alt="" coords="793,5,919,32">
+<area shape="rect" href="$_distance_point_line_8h.html#66760088a2231fdb763b9fcf98ae38f1" title="Distance between two points." alt="" coords="969,5,1049,32">
+<area shape="rect" href="$class_frame___display.html#81767257dd588154571bc023eec5460f" title="Changes view angle during autoview." alt="" coords="512,461,720,488">

@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Robbit"><param name="Local" value="main.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Installation"><param name="Local" value="installation.html"><param name="ImageNumber" value="11"></OBJECT>
+  <UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Dependencies"><param name="Local" value="dependencies.html"><param name="ImageNumber" value="11"></OBJECT>
+  <UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Usage"><param name="Local" value="usage.html"><param name="ImageNumber" value="11"></OBJECT>
+  <UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Features"><param name="Local" value="features.html"><param name="ImageNumber" value="11"></OBJECT>
+  <UL>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class List"><param name="Local" value="annotated.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="File_Data"><param name="Local" value="class_file___data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Frame_Data"><param name="Local" value="class_frame___data.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Frame_Display"><param name="Local" value="class_frame___display.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="PNGImage"><param name="Local" value="class_p_n_g_image.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="RobbitUI"><param name="Local" value="class_robbit_u_i.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="tagXY"><param name="Local" value="structtag_x_y.html"><param name="ImageNumber" value="11"></OBJECT>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="Class Members"><param name="Local" value="functions.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="File List"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>
+  <UL>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="CaptureScreen.h"><param name="Local" value="_capture_screen_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="definitions.h"><param name="Local" value="definitions_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="DistancePointLine.h"><param name="Local" value="_distance_point_line_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="file_data.c"><param name="Local" value="file__data_8c.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="File_Data.h"><param name="Local" value="_file___data_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Frame_Data.h"><param name="Local" value="_frame___data_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Frame_Display.c"><param name="Local" value="_frame___display_8c.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="frame_display.h"><param name="Local" value="frame__display_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="GetNextFrame.h"><param name="Local" value="_get_next_frame_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="Robbit.cpp"><param name="Local" value="_robbit_8cpp.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="robbitGUI.cxx"><param name="Local" value="robbit_g_u_i_8cxx.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="robbitgui.h"><param name="Local" value="robbitgui_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Name" value="WritePNG.h"><param name="Local" value="_write_p_n_g_8h.html"><param name="ImageNumber" value="11"></OBJECT>
+  </UL>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="File Members"><param name="Local" value="globals.html"><param name="ImageNumber" value="11"></OBJECT>
+</UL>
+</BODY>
+</HTML>

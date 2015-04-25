@@ -1,0 +1,17 @@
+<area shape="rect" href="$class_frame___display.html#df003ef0c045be14ff9c7974fbf87849" title="Captures a screenshot as a PNG." alt="" coords="209,107,436,133">
+<area shape="rect" href="$class_frame___display.html#656730bdc5bb7a9869a2a3638784ba0c" title="Sets configuration of Advanced Settings menu elements." alt="" coords="223,157,423,184">
+<area shape="rect" href="$class_frame___display.html#f19fe0e0c285956b83fd46c061056646" title="Toggles the Auto&#45;rotate mode." alt="" coords="228,208,417,235">
+<area shape="rect" href="$class_frame___display.html#33ea5d22f83d417ada06f193ddbc4dc7" title="Toggles the numbering of bot." alt="" coords="215,259,431,285">
+<area shape="rect" href="$class_frame___display.html#6fd2152d734da1397fe4a0e82378e382" title="Shows confirmation box before exit." alt="" coords="244,309,401,336">
+<area shape="rect" href="$class_frame___display.html#75e39dac8f882822a0e72a97e637ee42" title="Toggles the displaying of the Obstacles." alt="" coords="227,360,419,387">
+<area shape="rect" href="$class_frame___display.html#3ae9dd6d56919358b1b1dac10534fb41" title="Swaps Play and Pause symbols in GUI Play/Pause button, on click." alt="" coords="224,411,421,437">
+<area shape="rect" href="$class_frame___display.html#f42509bdf5d55ab8de65ff18f1bfb8ef" title="Toggles the top view mode." alt="" coords="231,461,415,488">
+<area shape="rect" href="$class_frame___display.html#b15168f87db737e6a31c9716a5572755" title="Clears trail data." alt="" coords="240,512,405,539">
+<area shape="rect" href="$_capture_screen_8h.html#f78f88ede185bf122f60ff2b163c590d" title="Actual Capture screen routine." alt="" coords="532,107,639,133">
+<area shape="rect" href="$class_p_n_g_image.html#d784beae7c9e8f56c659f0f288930de5" title="PNGImage::initWriteStructs" alt="" coords="735,5,916,32">
+<area shape="rect" href="$class_p_n_g_image.html#85da4570157d2d8003475e0060dcddc8" title="Open PNG file for write." alt="" coords="740,56,911,83">
+<area shape="rect" href="$class_p_n_g_image.html#962e508130d130c0f5f24f5f46265090" title="PNGImage::writeEnd" alt="" coords="755,107,896,133">
+<area shape="rect" href="$class_p_n_g_image.html#3c13af38501e5eafd9ac16d24c3bd403" title="PNGImage::writeHeader" alt="" coords="745,157,905,184">
+<area shape="rect" href="$class_p_n_g_image.html#76dc5f8e0282fa6d4ace3d82a18f5a99" title="PNGImage::writeImage" alt="" coords="748,208,903,235">
+<area shape="rect" href="$class_frame___display.html#ad5683921fc16cdd7e3a25d8dd536a15" title="Reads obstacle data file." alt="" coords="487,360,684,387">
+<area shape="rect" href="$_definitions_8h.html#f0fb16318defeb85ddbfff0a7e0aeffe" title="Returns next number reading from a string." alt="" coords="792,360,859,387">

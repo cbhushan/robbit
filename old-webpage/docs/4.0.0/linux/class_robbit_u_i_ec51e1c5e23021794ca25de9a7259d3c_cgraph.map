@@ -1,0 +1,7 @@
+<area shape="rect" href="$class_frame___display.html#df003ef0c045be14ff9c7974fbf87849" title="Captures a screenshot as a PNG." alt="" coords="265,107,492,133">
+<area shape="rect" href="$_capture_screen_8h.html#f78f88ede185bf122f60ff2b163c590d" title="Actual Capture screen routine." alt="" coords="543,107,649,133">
+<area shape="rect" href="$class_p_n_g_image.html#d784beae7c9e8f56c659f0f288930de5" title="PNGImage::initWriteStructs" alt="" coords="700,5,881,32">
+<area shape="rect" href="$class_p_n_g_image.html#85da4570157d2d8003475e0060dcddc8" title="Open PNG file for write." alt="" coords="705,56,876,83">
+<area shape="rect" href="$class_p_n_g_image.html#962e508130d130c0f5f24f5f46265090" title="PNGImage::writeEnd" alt="" coords="720,107,861,133">
+<area shape="rect" href="$class_p_n_g_image.html#3c13af38501e5eafd9ac16d24c3bd403" title="PNGImage::writeHeader" alt="" coords="711,157,871,184">
+<area shape="rect" href="$class_p_n_g_image.html#76dc5f8e0282fa6d4ace3d82a18f5a99" title="PNGImage::writeImage" alt="" coords="713,208,868,235">

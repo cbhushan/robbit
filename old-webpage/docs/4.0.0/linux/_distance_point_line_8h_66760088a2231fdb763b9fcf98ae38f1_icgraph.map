@@ -1,0 +1,4 @@
+<area shape="rect" href="$_distance_point_line_8h.html#cb83fc11c1884768d62e276ab5becdab" title="Evaluates if a bot lies on a line given by two points." alt="" coords="137,5,263,32">
+<area shape="rect" href="$class_frame___display.html#67afb42b0734c504599cf62f506edd99" title="Detects collision between an object and any obstacle." alt="" coords="312,5,568,32">
+<area shape="rect" href="$class_frame___display.html#33d7c4e59d6577aa2001ded777c616fa" title="Detects collisions between any of the bots and/or the ball and/or obstacles." alt="" coords="616,5,768,32">
+<area shape="rect" href="$class_frame___display.html#36ebca563b3f263b2d798c48fda61b61" title="Renders the current frame." alt="" coords="816,5,960,32">
